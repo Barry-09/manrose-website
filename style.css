@@ -1,0 +1,1213 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0D0D1A;
+    color: #FFFFFF;
+    font-family: Inter, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 700px;
+    height: 700px;
+
+    top: -300px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #7B2CBF;
+
+    opacity: 0.12;
+
+    filter: blur(160px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(13, 13, 26, 0.82);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    z-index: 1000;
+}
+
+.brand {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.brand span {
+    color: #C77DFF;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #B8B5C5;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #FFFFFF;
+}
+
+.menu-button {
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 120px 8% 70px;
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    border: 1px solid rgba(199, 125, 255, 0.35);
+
+    border-radius: 50px;
+
+    background: rgba(123, 44, 191, 0.12);
+
+    color: #D9B8FF;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(58px, 7vw, 94px);
+
+    line-height: 0.96;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #FFFFFF,
+        #D6A3FF,
+        #9D4EDD
+    );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero p {
+    max-width: 620px;
+
+    color: #AAA7B7;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 32px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 22px;
+
+    border-radius: 14px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.primary-button {
+    background: linear-gradient(
+        135deg,
+        #9D4EDD,
+        #5A189A
+    );
+
+    box-shadow:
+        0 15px 45px rgba(123, 44, 191, 0.3);
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+}
+
+.secondary-button {
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    color: #C8C5D1;
+
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.secondary-button:hover {
+    border-color: rgba(199, 125, 255, 0.45);
+
+    background: rgba(123, 44, 191, 0.08);
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* =========================
+   HERO APP SCREENSHOT
+========================= */
+
+/*
+   Same treatment as Posts,
+   Reels, Leaderboard etc.
+
+   No fake phone frame.
+   The image itself contains
+   the complete ManRose phone.
+*/
+
+.hero-phone {
+    position: relative;
+
+    width: min(310px, 82%);
+
+    max-height: 590px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    margin: 0 auto;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 30px;
+
+    overflow: visible;
+
+    filter:
+        drop-shadow(0 35px 50px rgba(0, 0, 0, 0.65))
+        drop-shadow(0 0 45px rgba(157, 78, 221, 0.18));
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.hero-phone:hover {
+    transform: translateY(-10px) scale(1.015);
+
+    filter:
+        drop-shadow(0 45px 60px rgba(0, 0, 0, 0.70))
+        drop-shadow(0 0 60px rgba(157, 78, 221, 0.28));
+}
+
+
+/* =========================
+   HERO SCREEN CONTAINER
+========================= */
+
+.hero-screen {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    padding: 0 !important;
+
+    margin: 0;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 30px;
+
+    overflow: visible;
+}
+
+
+/* =========================
+   COMPLETE MANROSE HOME IMAGE
+========================= */
+
+.hero-mini-post {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 590px;
+
+    padding: 0;
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 30px;
+
+    overflow: visible;
+}
+
+.hero-mini-post img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: 100%;
+
+    max-height: 590px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   HIDE OLD PHONE ELEMENTS
+========================= */
+
+.phone-notch {
+    display: none;
+}
+
+.phone-header {
+    display: none;
+}
+
+.hero-image-placeholder {
+    display: none;
+}
+
+.mini-card {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE HERO
+========================= */
+
+@media (max-width: 800px) {
+
+    .hero-visual {
+        width: 100%;
+
+        padding: 0 10px;
+    }
+
+    .hero-phone {
+        width: min(310px, 82vw);
+
+        max-height: 570px;
+    }
+
+    .hero-screen {
+        width: 100%;
+    }
+
+    .hero-mini-post {
+        width: 100%;
+
+        max-height: 570px;
+    }
+
+    .hero-mini-post img {
+        width: 100%;
+
+        max-height: 570px;
+
+        object-fit: contain;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    .hero-visual {
+        padding: 0 5px;
+    }
+
+    .hero-phone {
+        width: min(300px, 84vw);
+
+        max-height: 550px;
+    }
+
+    .hero-mini-post {
+        max-height: 550px;
+    }
+
+    .hero-mini-post img {
+        max-height: 550px;
+
+        border-radius: 26px;
+    }
+}
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 130px 20px 90px;
+
+    text-align: center;
+}
+
+.section-label,
+.feature-number {
+    color: #C77DFF;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2,
+.about-section h2,
+.showcase-section h2 {
+    font-size: clamp(40px, 5vw, 60px);
+
+    letter-spacing: -2.8px;
+
+    line-height: 1.05;
+
+    margin: 18px 0;
+}
+
+.section-heading h2 span,
+.about-section h2 span,
+.showcase-section h2 span {
+    color: #B875E8;
+}
+
+.section-heading p,
+.about-section p,
+.showcase-description {
+    color: #AAA7B7;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   FEATURE SECTIONS
+========================= */
+
+.feature-section {
+    max-width: 1200px;
+
+    min-height: 650px;
+
+    margin: 0 auto 100px;
+
+    padding: 50px 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+.feature-section.reverse .feature-visual {
+    order: 2;
+}
+
+.feature-section.reverse .feature-content {
+    order: 1;
+}
+
+
+/* =========================
+   FEATURE VISUAL
+========================= */
+
+.feature-visual {
+    min-height: 600px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    border-radius: 40px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(123, 44, 191, 0.25),
+            rgba(13, 13, 26, 0.15) 60%,
+            transparent 75%
+        );
+}
+
+
+/* =========================
+   REAL APP SCREENSHOT
+========================= */
+
+.real-phone-image {
+    position: relative;
+
+    width: min(310px, 82%);
+
+    max-height: 590px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    filter:
+        drop-shadow(0 35px 50px rgba(0, 0, 0, 0.65))
+        drop-shadow(0 0 45px rgba(157, 78, 221, 0.18));
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+.real-phone-image:hover {
+    transform: translateY(-10px) scale(1.015);
+
+    filter:
+        drop-shadow(0 45px 60px rgba(0, 0, 0, 0.7))
+        drop-shadow(0 0 60px rgba(157, 78, 221, 0.28));
+}
+
+.real-phone-image img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 590px;
+
+    object-fit: contain;
+
+    border-radius: 30px;
+
+    border: 7px solid #29293B;
+
+    background: #080812;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================
+   SCREENSHOTS WITHOUT NAVBAR
+========================= */
+
+.real-phone-image.no-navbar img {
+    border-radius: 28px;
+}
+
+
+/* =========================
+   FEATURE CONTENT
+========================= */
+
+.feature-content {
+    max-width: 540px;
+}
+
+.feature-content h3 {
+    font-size: clamp(40px, 4vw, 54px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+
+    margin: 17px 0;
+}
+
+.feature-content p {
+    color: #AAA7B7;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+
+    max-width: 500px;
+}
+
+.feature-tag {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 9px 14px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(199, 125, 255, 0.22);
+
+    background: rgba(123, 44, 191, 0.10);
+
+    color: #CFA4F5;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   PROFILE SHOWCASE
+========================= */
+
+.showcase-section {
+    max-width: 1200px;
+
+    margin: 80px auto 130px;
+
+    padding: 110px 30px;
+
+    text-align: center;
+}
+
+.showcase-description {
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+}
+
+.showcase-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+
+    align-items: start;
+}
+
+.showcase-card {
+    position: relative;
+
+    padding: 20px;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(123, 44, 191, 0.16),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.showcase-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(199, 125, 255, 0.25);
+}
+
+.showcase-card img {
+    display: block;
+
+    width: min(300px, 90%);
+
+    max-height: 570px;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+
+    border-radius: 28px;
+
+    border: 6px solid #29293B;
+
+    box-shadow:
+        0 30px 55px rgba(0, 0, 0, 0.55);
+}
+
+.showcase-card-content {
+    padding: 25px 10px 8px;
+}
+
+.showcase-card-content span {
+    color: #C77DFF;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.showcase-card-content h3 {
+    margin-top: 8px;
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    max-width: 850px;
+
+    margin: 30px auto 100px;
+
+    padding: 120px 30px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   DOWNLOAD
+========================= */
+
+.download-section {
+    padding: 0 7% 130px;
+}
+
+.download-content {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 100px 30px;
+
+    text-align: center;
+
+    border-radius: 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(157, 78, 221, 0.22),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(123, 44, 191, 0.18),
+            rgba(255, 255, 255, 0.03)
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.3);
+}
+
+.download-content h2 {
+    font-size: clamp(42px, 5vw, 62px);
+
+    letter-spacing: -2.5px;
+
+    margin: 18px 0;
+}
+
+.download-content p {
+    max-width: 620px;
+
+    margin: 0 auto 30px;
+
+    color: #AAA7B7;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 30px 9%;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #777486;
+
+    font-size: 13px;
+}
+
+.footer-brand {
+    color: #FFFFFF;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+.footer-brand span {
+    color: #C77DFF;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 22px;
+}
+
+.footer-links a {
+    color: #9995A7;
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #FFFFFF;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 0 6%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 120px 7% 70px;
+
+        text-align: center;
+
+        gap: 55px;
+    }
+
+    .hero-content {
+        margin: auto;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+
+    /* HERO PHONE */
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .hero-phone {
+        width: min(340px, 82vw);
+    }
+
+
+    /* FEATURES */
+
+    .feature-section {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        margin-bottom: 80px;
+
+        padding: 30px 20px;
+
+        min-height: auto;
+    }
+
+    .feature-section.reverse .feature-visual {
+        order: 0;
+    }
+
+    .feature-section.reverse .feature-content {
+        order: 1;
+    }
+
+    .feature-content {
+        text-align: center;
+
+        margin: auto;
+    }
+
+    .feature-content p {
+        margin: auto;
+    }
+
+    .feature-content h3 {
+        font-size: 38px;
+    }
+
+    .feature-visual {
+        min-height: 560px;
+    }
+
+    .real-phone-image {
+        width: min(310px, 88%);
+    }
+
+    .real-phone-image img {
+        max-height: 540px;
+    }
+
+
+    /* PROFILE */
+
+    .showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .showcase-section {
+        padding: 80px 20px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .hero-phone {
+        width: min(330px, 88vw);
+
+        border-radius: 38px;
+    }
+
+    .hero-screen {
+        border-radius: 32px;
+    }
+
+    .hero-home-image {
+        border-radius: 32px;
+    }
+
+
+    .feature-visual {
+        min-height: 500px;
+    }
+
+    .real-phone-image {
+        width: 82%;
+    }
+
+    .real-phone-image img {
+        border-width: 5px;
+
+        border-radius: 24px;
+    }
+
+    .showcase-card img {
+        width: 88%;
+    }
+
+}
+
+/* =========================
+   HERO HOME IMAGE — SIZE FIX
+========================= */
+
+.hero-home-image {
+    display: block !important;
+
+    width: 310px !important;
+    max-width: 310px !important;
+
+    height: auto !important;
+    max-height: 590px !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+
+/* HERO IMAGE CONTAINER */
+
+.hero-visual {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 801px) {
+
+    .hero-home-image {
+        width: 310px !important;
+        max-width: 310px !important;
+        max-height: 590px !important;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .hero-home-image {
+        width: 280px !important;
+        max-width: 280px !important;
+        max-height: 540px !important;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+    .hero-home-image {
+        width: 250px !important;
+        max-width: 250px !important;
+        max-height: 500px !important;
+    }
+
+}
