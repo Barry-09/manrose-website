@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://barry-09.github.io/manrose-website/sitemap.xml
